@@ -1,0 +1,9 @@
+services:
+  devil-fruit-encyclopedia:
+    image: nginx:alpine
+    container_name: devil-fruit-encyclopedia
+    restart: unless-stopped
+    expose:
+      - "80"
+    volumes:
+      - ./data:/usr/share/nginx/html:ro
