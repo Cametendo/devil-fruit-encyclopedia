@@ -1,0 +1,118 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f1320;
+  color: #f0f4ff;
+  line-height: 1.5;
+}
+
+.page-header {
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+  background: #171d2d;
+  border-bottom: 1px solid #2f3953;
+}
+
+.page-header h1 {
+  margin: 0;
+}
+
+.page-header p {
+  margin: 0.5rem 0 0;
+  color: #c6d3ef;
+}
+
+.content {
+  width: min(1080px, 94%);
+  margin: 1.5rem auto 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: #161d2d;
+  border: 1px solid #2f3953;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.toolbar h2 {
+  margin: 0 0 0.25rem;
+}
+
+.toolbar p {
+  margin: 0 0 0.75rem;
+  color: #c6d3ef;
+}
+
+.toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+button {
+  border: 1px solid #4b5c85;
+  background: #263453;
+  color: #f0f4ff;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #32456d;
+}
+
+button.danger {
+  background: #593040;
+  border-color: #80465d;
+}
+
+button.danger:hover {
+  background: #6c394d;
+}
+
+.fruit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.fruit-card {
+  background: #161d2d;
+  border: 1px solid #2f3953;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.fruit-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.fruit-info {
+  padding: 0.8rem 0.9rem 1rem;
+}
+
+.fruit-info h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+}
+
+.fruit-info p {
+  margin: 0.2rem 0;
+  color: #dbe4fa;
+  font-size: 0.95rem;
+}
