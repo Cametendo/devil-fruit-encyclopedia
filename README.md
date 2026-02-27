@@ -19,8 +19,8 @@ SPOILER-WARNING: THIS WEBSITE WILL SPOILER MANY FRUITS ASWELL AS DETAILS RELATED
 - Update fruits: Users can update fruits (those they added themself) to add / remove details
 - Delete fruits: Users can delete fruits they added
 
-# Supported OS
-- Linux, MacOS, FreeBSD, Windows, Android, iOS
+# Supported OS (Operating System)
+- Linux, MacOS, FreeBSD, Windows, Android, iOS <sub>(TL;DR: every OS that supports a web-browser with javascript)</sub>
 
 # Access
 1. (To be added)
