@@ -5,11 +5,11 @@ An encyclopedia about One Piece devil fruits build with HTML, CSS and JS
 [![Status](https://img.shields.io/badge/Status-Beta-red.svg)](https://en.wikipedia.org/wiki/Software_release_life_cycle#Beta)
 
 # About
-A simple and small encyclopedia about the One Piece devil fruits built with HTML, CSS and JS.
-SPOILER-WARNING: THIS WEBSITE WILL SPOILER MANY FRUITS ASWELL AS DETAILS RELATED TO EACH FRUIT! VISIT AT YOUR OWN RISK!!
+A simple and small encyclopedia about the One Piece devil fruits built with HTML, CSS and JS. <br>
+SPOILER-WARNING: THIS WEBSITE WILL SPOILER MANY FRUITS AND DETAILS RELATED TO EACH FRUIT! VISIT AT YOUR OWN RISK!!
 
 # Requirements
-- `Web-Browser`: Firefox (recommended), Chrome / Chromium, Safari (if on MacOS)
+- `Web-Browser`: Firefox (recommended), Chrome / Chromium, Safari (on MacOS)
 - `JavaScript`: enabled
 - `Internet`: active connection
 
@@ -23,10 +23,17 @@ SPOILER-WARNING: THIS WEBSITE WILL SPOILER MANY FRUITS ASWELL AS DETAILS RELATED
 - Linux, MacOS, FreeBSD, Windows, Android, iOS <sub>(TL;DR: every OS that supports a web-browser with javascript)</sub>
 
 # Access
-1. (To be added)
+You can access the website in two ways. Self-hosted (git clone) or directly via [devilfruits.cametendo.org](https://devilfruits.cametendo.org).
+
+### Self-hosted
+1. Clone this repository onto your device
+2. Open the root folder of the repository (`/path/to/the/repo/devil-fruit-encyclopedia`) in a terminal
+3. Create a localhost with `python -m http.server 8000` (requires python3 to be installed)
+4. Open your preferred web-browser and go to: `http://localhost:8000` or `http://127.0.0.1`
+(works on all 
 
 # License and Credits
-**Author**: [Cametendo](https://www.github.com/Cametendo)
+**Author**: [Cametendo](https://www.github.com/Cametendo) <br>
 **License**: MIT
 
 ## Note
