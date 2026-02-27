@@ -6,4 +6,4 @@ services:
     expose:
       - "80"
     volumes:
-      - ./data:/usr/share/nginx/html:ro
+      - ./:/usr/share/nginx/html:ro
