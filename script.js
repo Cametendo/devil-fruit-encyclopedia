@@ -131,12 +131,12 @@ const devilFruits = [
     type: "Logia",
     user: "Kuzan",
     image:
-      "assets/hie-hie-no-mi.svg",
+      "assets/hie-hie-no-mi.png",
     description:
       "Lets the user create, control, and become ice, including freezing oceans and opponents over huge areas.",
     detail:
       "Kuzan's ten-day duel with Sakazuki permanently changed Punk Hazard's climate.",
-    source: "https://onepiece.fandom.com/wiki/Hie_Hie_no_Mi",
+    source: "/assets/hie-hie-no-mi.svg",
     meta: [
       ["Category", "Logia"],
       ["Current user", "Kuzan"],
