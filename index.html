@@ -5,79 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Devil Fruit Encyclopedia</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header class="page-header">
+      <p class="eyebrow">Grand Line Archive</p>
       <h1>Devil Fruit Encyclopedia</h1>
-      <p>Quickstart UI mockup (no JavaScript yet).</p>
+      <p class="hero-copy">
+        A spoiler-heavy guide to famous Devil Fruits from One Piece, featuring
+        canon names, users, powers, and fruit designs.
+      </p>
     </header>
 
     <main class="content">
-      <section class="toolbar card">
-        <h2>Fruit Collection</h2>
-        <p>
-          Later, your JS can hook into these buttons and cards for add, update, and
-          delete actions.
-        </p>
-        <div class="toolbar-actions">
-          <button type="button">+ Add Fruit</button>
-          <button type="button">Update Selected</button>
-          <button type="button" class="danger">Delete Selected</button>
+      <section class="overview card">
+        <div>
+          <h2>Known Fruits</h2>
+          <p>
+            This collection now uses real Devil Fruit names, current users, fruit
+            classes, and lore details instead of placeholder cards.
+          </p>
+        </div>
+        <div class="stat-row" aria-label="Devil fruit stats">
+          <div class="stat-pill">
+            <span class="stat-label">Entries</span>
+            <strong id="fruit-count">0</strong>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">Classes</span>
+            <strong>Paramecia, Logia, Zoan</strong>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">Images</span>
+            <strong>Canon fruit art</strong>
+          </div>
         </div>
       </section>
 
-      <section class="fruit-grid" aria-label="Devil fruit list preview">
-        <article class="fruit-card">
-          <img
-            src="https://picsum.photos/seed/gomu/400/260"
-            alt="Placeholder image for Gomu Gomu no Mi"
-          />
-          <div class="fruit-info">
-            <h3>Gomu Gomu no Mi</h3>
-            <p><strong>Type:</strong> Paramecia</p>
-            <p><strong>User:</strong> Monkey D. Luffy</p>
-            <p>Makes the user’s body rubber-like.</p>
-          </div>
-        </article>
+      <section class="section-heading">
+        <h2>Fruit Collection</h2>
+        <p>
+          Canon fruit images are loaded from the One Piece Wiki image CDN. Some
+          entries also note previous users when that history matters.
+        </p>
+      </section>
 
-        <article class="fruit-card">
-          <img
-            src="https://picsum.photos/seed/mera/400/260"
-            alt="Placeholder image for Mera Mera no Mi"
-          />
-          <div class="fruit-info">
-            <h3>Mera Mera no Mi</h3>
-            <p><strong>Type:</strong> Logia</p>
-            <p><strong>User:</strong> Portgas D. Ace / Sabo</p>
-            <p>Allows creation and control of fire.</p>
-          </div>
-        </article>
+      <section
+        class="fruit-grid"
+        id="fruit-grid"
+        aria-label="Devil fruit encyclopedia entries"
+      >
+      </section>
 
+      <template id="fruit-card-template">
         <article class="fruit-card">
-          <img
-            src="https://picsum.photos/seed/ope/400/260"
-            alt="Placeholder image for Ope Ope no Mi"
-          />
+          <img />
           <div class="fruit-info">
-            <h3>Ope Ope no Mi</h3>
-            <p><strong>Type:</strong> Paramecia</p>
-            <p><strong>User:</strong> Trafalgar D. Water Law</p>
-            <p>Creates a ROOM where the user can manipulate objects.</p>
+            <div class="title-row">
+              <h3></h3>
+              <span class="fruit-type"></span>
+            </div>
+            <p class="subtitle"></p>
+            <ul class="fruit-meta"></ul>
+            <p class="description"></p>
+            <p class="extra-detail"></p>
+            <a class="source-link" target="_blank" rel="noreferrer">Source</a>
           </div>
         </article>
-
-        <article class="fruit-card">
-          <img
-            src="https://picsum.photos/seed/yami/400/260"
-            alt="Placeholder image for Yami Yami no Mi"
-          />
-          <div class="fruit-info">
-            <h3>Yami Yami no Mi</h3>
-            <p><strong>Type:</strong> Logia</p>
-            <p><strong>User:</strong> Marshall D. Teach</p>
-            <p>Manipulates darkness and gravity-like pull.</p>
-          </div>
-        </article>
+      </template>
+      <section class="credits card">
+        <p>
+          Images and lore details are based on the One Piece Wiki fruit pages.
+        </p>
       </section>
     </main>
   </body>
