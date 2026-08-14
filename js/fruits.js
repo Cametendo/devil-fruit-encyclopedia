@@ -33,6 +33,7 @@
 
     renderCardGrid(grid, results, fruitCardHTML, 'No Devil Fruits match your search.');
     resultCount.textContent = `${results.length} of ${FRUITS.length} Devil Fruits`;
+    hydrateProperImages(grid);
   }
 
   chipRow.addEventListener('click', (e) => {
