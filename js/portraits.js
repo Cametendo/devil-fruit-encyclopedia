@@ -74,7 +74,26 @@ function iconKeyForCharacter(c) {
   return 'star';
 }
 
-function characterPortraitSVG(c) {
+function characterImageTitle(c) {
+  return c.imageTitle || c.name;
+}
+
+function fruitImageTitle(f) {
+  if (f.imageTitle) return f.imageTitle;
+  if (f.id === 'gomu-gomu-no-mi') return 'Hito Hito no Mi, Model: Nika';
+  return f.name;
+}
+
+function properImageHTML(kind, title, label, fallback) {
+  return `
+    <span class="proper-image proper-image--${kind}" data-image-title="${escapeHtml(title)}" data-image-kind="${kind}">
+      <span class="proper-image__fallback">${fallback}</span>
+      <img class="proper-image__img" alt="${escapeHtml(label)}" loading="lazy" referrerpolicy="no-referrer" hidden>
+    </span>
+  `;
+}
+
+function characterPortraitFallbackSVG(c) {
   const accent = accentFor(c);
   const hue2 = (hashHue(c.id + 'x') + 45) % 360;
   const icon = ROLE_ICONS[iconKeyForCharacter(c)] || ROLE_ICONS.star;
@@ -104,7 +123,7 @@ function characterPortraitSVG(c) {
 
 const CATEGORY_HEX = { Paramecia: '#a06cd5', Zoan: '#4c9a5a', Logia: '#3f9bd0' };
 
-function fruitPortraitSVG(f) {
+function fruitPortraitFallbackSVG(f) {
   const color = CATEGORY_HEX[f.category] || '#e3b04b';
   const glow = f.subtype && /mythical|special/i.test(f.subtype);
   const uid = f.id.replace(/[^a-z0-9]/g, '');
@@ -125,4 +144,85 @@ function fruitPortraitSVG(f) {
       <text x="32" y="41" font-size="19" text-anchor="middle">${f.icon}</text>
     </svg>
   `;
+}
+
+
+function characterPortraitSVG(c) {
+  return properImageHTML('character', characterImageTitle(c), `${c.name} portrait`, characterPortraitFallbackSVG(c));
+}
+
+function fruitPortraitSVG(f) {
+  return properImageHTML('fruit', fruitImageTitle(f), `${f.name} fruit`, fruitPortraitFallbackSVG(f));
+}
+
+const IMAGE_CACHE_KEY = 'opwikiProperImages:v1';
+const IMAGE_API_ENDPOINT = 'https://onepiece.fandom.com/api.php';
+let properImageCache = null;
+
+function getProperImageCache() {
+  if (properImageCache) return properImageCache;
+  try {
+    properImageCache = JSON.parse(localStorage.getItem(IMAGE_CACHE_KEY) || '{}');
+  } catch (_) {
+    properImageCache = {};
+  }
+  return properImageCache;
+}
+
+function saveProperImageCache() {
+  try {
+    localStorage.setItem(IMAGE_CACHE_KEY, JSON.stringify(getProperImageCache()));
+  } catch (_) {
+    // Non-critical: images still load for the current page if storage is unavailable.
+  }
+}
+
+function wikiThumbnailUrl(title, size = 700) {
+  const params = new URLSearchParams({
+    action: 'query',
+    prop: 'pageimages',
+    format: 'json',
+    piprop: 'thumbnail',
+    pithumbsize: String(size),
+    redirects: '1',
+    origin: '*',
+    titles: title,
+  });
+  return `${IMAGE_API_ENDPOINT}?${params.toString()}`;
+}
+
+async function resolveProperImage(title) {
+  const cache = getProperImageCache();
+  if (Object.prototype.hasOwnProperty.call(cache, title)) return cache[title];
+
+  const response = await fetch(wikiThumbnailUrl(title));
+  if (!response.ok) throw new Error(`Image lookup failed for ${title}`);
+  const data = await response.json();
+  const page = Object.values(data.query?.pages || {})[0];
+  const source = page?.thumbnail?.source || '';
+  cache[title] = source;
+  saveProperImageCache();
+  return source;
+}
+
+function hydrateProperImages(root = document) {
+  const holders = [...root.querySelectorAll('.proper-image[data-image-title]')];
+  holders.forEach(async (holder) => {
+    const img = holder.querySelector('.proper-image__img');
+    if (!img || holder.dataset.loaded) return;
+    holder.dataset.loaded = 'pending';
+
+    try {
+      const source = await resolveProperImage(holder.dataset.imageTitle);
+      if (!source) throw new Error('No thumbnail returned');
+      img.addEventListener('load', () => {
+        holder.classList.add('is-loaded');
+        img.hidden = false;
+      }, { once: true });
+      img.src = source;
+      holder.dataset.loaded = 'true';
+    } catch (_) {
+      holder.dataset.loaded = 'fallback';
+    }
+  });
 }

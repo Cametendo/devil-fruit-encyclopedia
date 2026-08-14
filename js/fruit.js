@@ -79,4 +79,6 @@
       </aside>
     </div>
   `;
+
+  hydrateProperImages(root);
 })();

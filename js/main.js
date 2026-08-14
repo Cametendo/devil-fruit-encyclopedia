@@ -35,6 +35,7 @@
 
     renderCardGrid(grid, results, characterCardHTML, 'No characters match your search. Try a different name or affiliation.');
     resultCount.textContent = `${results.length} of ${CHARACTERS.length} characters`;
+    hydrateProperImages(grid);
   }
 
   searchInput.addEventListener('input', applyFilters);

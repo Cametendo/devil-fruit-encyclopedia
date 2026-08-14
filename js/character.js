@@ -82,4 +82,6 @@
       </aside>
     </div>
   `;
+
+  hydrateProperImages(root);
 })();
