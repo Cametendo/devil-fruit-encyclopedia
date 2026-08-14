@@ -36,11 +36,6 @@ function accentFor(entity) {
   return `hsl(${hashHue(entity.name || key)}, 58%, 48%)`;
 }
 
-function initialFor(name) {
-  const match = (name || '?').match(/[A-Za-z]/);
-  return match ? match[0].toUpperCase() : '?';
-}
-
 function formatBounty(amount) {
   if (amount === null || amount === undefined) return 'Unknown';
   return '฿' + amount.toLocaleString('en-US');
@@ -89,7 +84,7 @@ function characterCardHTML(c) {
         <div class="char-card__poster">
           ${deadRibbon}
           <span class="char-card__wanted">WANTED</span>
-          <div class="char-card__avatar">${initialFor(c.name)}</div>
+          <div class="char-card__avatar">${characterPortraitSVG(c)}</div>
         </div>
         <div class="char-card__body">
           <h3>${escapeHtml(c.name)}</h3>
@@ -112,7 +107,7 @@ function fruitCardHTML(f) {
     <article class="fruit-card" data-cat="${escapeHtml(f.category)}">
       <a href="${fruitLink(f.id)}" aria-label="View ${escapeHtml(f.name)}">
         <div class="fruit-card__inner">
-          <div class="fruit-card__icon">${f.icon}</div>
+          <div class="fruit-card__icon">${fruitPortraitSVG(f)}</div>
           <h3>${escapeHtml(f.name)}</h3>
           <span class="fruit-card__type">${escapeHtml(f.category)}${f.subtype ? ' · ' + escapeHtml(f.subtype.split(' —')[0].split(' (')[0]) : ''}</span>
           <p class="fruit-card__tagline">${escapeHtml(f.tagline)}</p>

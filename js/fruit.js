@@ -25,7 +25,7 @@
     if (!c) return '';
     return `
       <a class="user-chip" href="${characterLink(c.id)}" style="--accent:${accentFor(c)}">
-        <div class="user-chip__avatar">${initialFor(c.name)}</div>
+        <div class="user-chip__avatar">${characterPortraitSVG(c)}</div>
         <div>
           <div class="user-chip__name">${escapeHtml(c.name)}</div>
           <div class="user-chip__status">${escapeHtml(u.status)}</div>
@@ -36,7 +36,7 @@
 
   root.innerHTML = `
     <section class="fruit-detail-header" data-cat="${escapeHtml(fruit.category)}">
-      <div class="fruit-detail-header__icon">${fruit.icon}</div>
+      <div class="fruit-detail-header__icon">${fruitPortraitSVG(fruit)}</div>
       <div>
         <p class="profile-eyebrow" style="color:var(--cat-color)">${escapeHtml(fruit.category)}${fruit.subtype ? ' · ' + escapeHtml(fruit.subtype) : ''}${fruit.awakened ? ' · Awakened' : ''}</p>
         <h1>${escapeHtml(fruit.name)}</h1>

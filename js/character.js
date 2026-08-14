@@ -35,7 +35,7 @@
 
   root.innerHTML = `
     <section class="profile-header" style="--accent:${accent}">
-      <div class="profile-avatar">${initialFor(character.name)}</div>
+      <div class="profile-avatar">${characterPortraitSVG(character)}</div>
       <div>
         <p class="profile-eyebrow">${escapeHtml(character.affiliation)} · ${escapeHtml(character.role)}</p>
         <h1>${escapeHtml(character.name)}</h1>
@@ -52,7 +52,7 @@
       <div class="profile-main">
         ${fruit ? `
           <a class="fruit-callout" href="${fruitLink(fruit.id)}">
-            <div class="fruit-callout__icon">${fruit.icon}</div>
+            <div class="fruit-callout__icon">${fruitPortraitSVG(fruit)}</div>
             <div>
               <p class="fruit-callout__label">${escapeHtml(fruitRelation ? fruitRelation.status : 'Devil Fruit')}</p>
               <h3>${escapeHtml(fruit.name)}</h3>
