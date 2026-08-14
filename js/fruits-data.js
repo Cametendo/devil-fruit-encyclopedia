@@ -952,5 +952,22 @@ const FRUITS = [
     strengths: "Combines huge physical scale with air-splitting shockwave attacks, ideal for large-scale battlefield control.",
     weaknesses: "The form's size can be unwieldy in enclosed spaces or against fast, evasive opponents.",
     users: [{ id: 'sengoku', status: 'Current user' }]
+  },
+  {
+    id: 'uta-uta-no-mi', name: 'Uta Uta no Mi', englishName: 'Song-Song Fruit',
+    category: 'Paramecia', subtype: null, awakened: false, icon: '🎤',
+    meaning: '"Uta" — song',
+    tagline: "Lets the user pull anyone who hears them sing into a shared dream world of their own making.",
+    description: "A Paramecia fruit that turns the user's singing voice into a gateway: anyone who hears the song can be drawn, body and mind, into an internal dream world the user controls — called Uta no Sekai — with the line between dream and reality blurring the longer a victim stays trapped inside.",
+    history: "The fruit's history before Uta is unrecorded. She ate it as a child growing up in secret aboard the Red Hair Pirates' ship, and an early, uncontrolled use of its power left her with a heart weakened for the rest of her life, a risk Shanks chose to shield her from rather than explain.\n\nYears later, performing as the world's most famous singer under a hidden identity, Uta used the fruit at her debut concert on the Island of Elegia to try to pull all of humanity permanently into Uta no Sekai as part of a plan she called \"New Genesis,\" believing a shared dream was kinder than a world full of pain. Monkey D. Luffy fought his way through the dream world to reach her and broke the technique, freeing everyone trapped inside — though the toll on Uta's own heart proved fatal soon after. (Introduced in One Piece Film: Red, a movie storyline outside the main manga/anime continuity.)",
+    powers: [
+      "Pulling anyone who hears the user sing into a shared dream world (Uta no Sekai)",
+      "Full sensory and bodily control over victims while they remain inside the dream",
+      "The dream world gradually merges with reality the longer victims stay trapped",
+      "Sufficiently powerful real-world attacks reaching a victim can forcibly eject them from the dream"
+    ],
+    strengths: "Can incapacitate enormous crowds simultaneously with nothing but a song, requiring no direct contact.",
+    weaknesses: "Physically taxing on the user's own body and heart; victims can potentially be shocked back to reality by a strong enough attack.",
+    users: [{ id: 'uta', status: 'Current user (deceased)' }]
   }
 ];

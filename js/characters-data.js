@@ -801,5 +801,13 @@ const CHARACTERS = [
     devilFruit: null, firstAppearance: 'Chapter 655, "Kinemon of the Foxfire"',
     abilities: ['Occasional forced dragon transformation (via SMILE-derived drug)', 'Rightful claim to Wano\'s shogunate'],
     bio: 'The son of Kozuki Oden, thrust into leadership as Wano\'s new shogun after twenty years frozen in time by Toki\'s Devil Fruit. Momonosuke\'s reluctant, often terrified heroism during the raid on Onigashima, including flying into battle as a dragon, marked his growth into the heir his father hoped he would become.'
+  },
+  {
+    id: 'uta', name: 'Uta', epithet: "World's Greatest Diva",
+    affiliation: 'Independent (raised by the Red Hair Pirates)', role: 'Singer', origin: "Raised aboard Shanks' ship, later Elbaf",
+    age: 18, height: '156 cm', birthday: 'March 8', bounty: null, status: 'Deceased',
+    devilFruit: 'uta-uta-no-mi', firstAppearance: 'One Piece Film: Red (2022)',
+    abilities: ['Uta Uta no Mi (trapping listeners inside Uta no Sekai)', 'World-renowned singing voice', 'Advanced physical combat (implied Haki)'],
+    bio: "The secret daughter of \"Red-Haired\" Shanks and Luffy's closest childhood friend, hidden away and raised on Elbaf after Shanks told her he had died, so she would never be tempted to follow him into a pirate's life. Uta grew up to become the most famous singer in the world, performing behind a hidden identity. At her debut concert on the Island of Elegia, grief and a desire to end all suffering drove her to use her Devil Fruit to try to trap humanity inside a permanent dream world, a plan called \"New Genesis\" that only Luffy — and her father — could stop. She died in Shanks' arms soon after, her heart unable to bear the strain the power had placed on it since childhood. (Appears in One Piece Film: Red, a movie storyline outside the main manga/anime continuity.)"
   }
 ];
