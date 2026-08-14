@@ -3,7 +3,7 @@ services:
     image: nginx:alpine
     container_name: devil-fruit-encyclopedia
     restart: unless-stopped
-    expose:
-      - "80"
+    ports:
+      - "8080:80"
     volumes:
-      - ./data:/usr/share/nginx/html:ro
+      - .:/usr/share/nginx/html:ro

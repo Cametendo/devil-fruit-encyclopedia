@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>One Piece Wiki — Characters &amp; Devil Fruit Encyclopedia</title>
-    <meta name="description" content="A fan-made encyclopedia of the 100 most well-known One Piece characters and every Devil Fruit they carry — history, powers, and prior users." />
+    <title>Devil Fruit Encyclopedia — One Piece Wiki</title>
+    <meta name="description" content="Every Devil Fruit's history, powers, strengths, weaknesses, and full user lineage — Paramecia, Zoan, and Logia." />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏴‍☠️</text></svg>" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
@@ -22,15 +22,16 @@
     <section class="hero">
       <div class="container hero__inner">
         <span class="hero__eyebrow">⚠ Spoiler warning — covers the full story</span>
-        <h1>The One Piece Wiki</h1>
+        <h1>Devil Fruit Encyclopedia</h1>
         <p class="hero__sub">
-          An encyclopedia of the Grand Line's most legendary pirates, marines, and revolutionaries —
-          and every Devil Fruit that made them famous, from history and awakening to every user who ever held it.
+          Every Devil Fruit carried by a character in this wiki — its history, its powers,
+          its strengths and weaknesses, and every user who ever held it.
         </p>
         <div class="hero__stats">
-          <div class="stat-pill"><strong id="stat-characters">100</strong><span>Characters</span></div>
           <div class="stat-pill"><strong id="stat-fruits">57</strong><span>Devil Fruits</span></div>
-          <div class="stat-pill"><strong>3</strong><span>Fruit Classes</span></div>
+          <div class="stat-pill"><strong id="stat-paramecia">0</strong><span>Paramecia</span></div>
+          <div class="stat-pill"><strong id="stat-zoan">0</strong><span>Zoan</span></div>
+          <div class="stat-pill"><strong id="stat-logia">0</strong><span>Logia</span></div>
         </div>
       </div>
     </section>
@@ -38,17 +39,14 @@
     <main>
       <section class="container">
         <div class="filter-bar">
-          <input type="search" id="search-input" class="input" placeholder="Search by name, epithet, or affiliation…" autocomplete="off" />
-          <select id="affiliation-select" class="select">
-            <option value="">All affiliations</option>
-          </select>
-          <label class="checkbox"><input type="checkbox" id="fruit-only-checkbox" /> Devil Fruit users only</label>
+          <input type="search" id="search-input" class="input" placeholder="Search by fruit name or user…" autocomplete="off" />
           <span class="filter-meta" id="result-count"></span>
         </div>
+        <div class="chip-row" id="category-chips"></div>
       </section>
 
       <section class="section container">
-        <div class="grid character-grid" id="character-grid" aria-live="polite"></div>
+        <div class="grid fruit-grid" id="fruit-grid" aria-live="polite"></div>
       </section>
     </main>
 
@@ -63,6 +61,6 @@
     <script src="js/characters-data.js"></script>
     <script src="js/fruits-data.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/fruits.js"></script>
   </body>
 </html>
