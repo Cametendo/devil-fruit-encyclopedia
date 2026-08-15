@@ -74,6 +74,16 @@ function statusBadgeClass(status) {
   return 'badge--unknown';
 }
 
+function characterPosterLabel(c) {
+  if (c.bounty !== null && c.bounty !== undefined) return 'WANTED';
+  if (/marine/i.test(c.affiliation || '')) return 'MARINE';
+  return (c.affiliation || c.role || 'UNKNOWN').split(/[/(]/)[0].trim().toUpperCase();
+}
+
+function characterBountyOrRank(c) {
+  return c.bounty !== null && c.bounty !== undefined ? formatBounty(c.bounty) : c.role || 'Rank unknown';
+}
+
 function characterCardHTML(c) {
   const accent = accentFor(c);
   const deadRibbon = /deceased/i.test(c.status || '') ? '<span class="char-card__status">Deceased</span>' : '';
@@ -83,13 +93,13 @@ function characterCardHTML(c) {
       <a href="${characterLink(c.id)}" aria-label="View ${escapeHtml(c.name)}">
         <div class="char-card__poster">
           ${deadRibbon}
-          <span class="char-card__wanted">WANTED</span>
+          <span class="char-card__wanted">${escapeHtml(characterPosterLabel(c))}</span>
           <div class="char-card__avatar">${characterPortraitSVG(c)}</div>
         </div>
         <div class="char-card__body">
           <h3>${escapeHtml(c.name)}</h3>
           <p class="char-card__epithet">${c.epithet ? '"' + escapeHtml(c.epithet) + '"' : ' '}</p>
-          <p class="char-card__bounty">${c.bounty ? formatBounty(c.bounty) : 'Bounty Unknown'}</p>
+          <p class="char-card__bounty">${escapeHtml(characterBountyOrRank(c))}</p>
           <div class="char-card__tags">
             <span class="tag">${escapeHtml(c.affiliation)}</span>
             ${fruitTag}

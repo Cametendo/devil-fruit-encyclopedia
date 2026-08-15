@@ -811,10 +811,10 @@ p { margin: 0 0 1em; color: var(--text-muted); }
 }
 
 .proper-image--fruit .proper-image__img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  padding: 8%;
-  background: radial-gradient(circle at 50% 45%, rgba(255,255,255,0.08), #0b1220 70%);
+  padding: 0;
+  background: #0b1220;
 }
 
 .proper-image.is-loaded .proper-image__fallback { opacity: 0; }

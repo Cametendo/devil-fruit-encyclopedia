@@ -42,7 +42,7 @@
         <p class="profile-epithet">${character.epithet ? '"' + escapeHtml(character.epithet) + '"' : ''}</p>
         <div class="profile-badges">
           <span class="badge ${statusBadgeClass(character.status)}">${escapeHtml(character.status || 'Unknown')}</span>
-          <span class="badge badge--bounty">${character.bounty ? formatBounty(character.bounty) : 'Bounty Unknown'}</span>
+          <span class="badge badge--bounty">${escapeHtml(characterBountyOrRank(character))}</span>
           ${fruit ? `<span class="badge" data-cat="${escapeHtml(fruit.category)}" style="color:var(--cat-color)">${escapeHtml(fruit.category)} User</span>` : ''}
         </div>
       </div>
